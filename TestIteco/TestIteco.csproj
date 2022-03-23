@@ -1,0 +1,361 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3B5EF65C-E76A-4854-96AA-7267EF3B1FB1}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TestIteco</RootNamespace>
+    <AssemblyName>TestIteco</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Web.Bootstrap.v20.1, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.Resources.v20.1, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="ERPCatalogs">
+      <HintPath>..\..\ERPCatalogs\ERPCatalogs\bin\Debug\netstandard2.0\ERPCatalogs.dll</HintPath>
+    </Reference>
+    <Reference Include="ERPNet">
+      <HintPath>..\..\ERPNet\ERPNet\obj\Debug\netstandard2.0\ERPNet.dll</HintPath>
+    </Reference>
+    <Reference Include="MailLib">
+      <HintPath>..\..\..\DEKRA Projects\Projects\MailLib\MailLib\bin\Debug\MailLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.5.0.0\lib\net461\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=5.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.5.0.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="DevExpress.Data.v20.1, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Web.ASPxThemes.v20.1, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v20.1.Core, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v20.1.Core, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v20.1.Export, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v20.1.Core, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Web.v20.1, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraScheduler.v20.1.Core, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Web.ASPxScheduler.v20.1, Version=20.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\DialogUserControl.js" />
+    <Content Include="Content\Images\calendar-plus.svg" />
+    <Content Include="Content\Content.css" />
+    <Content Include="Content\FileTypes\Document_48x67.png" />
+    <Content Include="Content\FileTypes\File_48x67.png" />
+    <Content Include="Content\FileTypes\ImageGallery_48x67.png" />
+    <Content Include="Content\FileTypes\Image_48x67.png" />
+    <Content Include="Content\FileTypes\Movie_48x67.png" />
+    <Content Include="Content\FileTypes\Music_48x67.png" />
+    <Content Include="Content\FileTypes\PDF_48x67.png" />
+    <Content Include="Content\FileTypes\Presentation_48x67.png" />
+    <Content Include="Content\FileTypes\SpreadSheet_48x67.png" />
+    <Content Include="Content\FileTypes\TextFile_48x67.png" />
+    <Content Include="Content\FileTypes\Zip_48x67.png" />
+    <Content Include="Content\Functions.js" />
+    <Content Include="Content\GridView.css" />
+    <Content Include="Content\GridView.js" />
+    <Content Include="Content\Images\adaptive-menu.svg" />
+    <Content Include="Content\Images\add.svg" />
+    <Content Include="Content\Images\application.svg" />
+    <Content Include="Content\Images\Article-white.svg" />
+    <Content Include="Content\Images\Article.svg" />
+    <Content Include="Content\Images\back.svg" />
+    <Content Include="Content\Images\camera.svg" />
+    <Content Include="Content\Images\cancel.svg" />
+    <Content Include="Content\Images\check.svg" />
+    <Content Include="Content\Images\checklist.svg" />
+    <Content Include="Content\Images\chevron-down.svg" />
+    <Content Include="Content\Images\chevron-left.svg" />
+    <Content Include="Content\Images\chevron-right.svg" />
+    <Content Include="Content\Images\chevron-up.svg" />
+    <Content Include="Content\Images\copy.svg" />
+    <Content Include="Content\Images\delete.svg" />
+    <Content Include="Content\Images\document.svg" />
+    <Content Include="Content\Images\double-close.svg" />
+    <Content Include="Content\Images\double.svg" />
+    <Content Include="Content\Images\down.svg" />
+    <Content Include="Content\Images\edit.svg" />
+    <Content Include="Content\Images\enter.svg" />
+    <Content Include="Content\Images\ERP_Icon.ico" />
+    <Content Include="Content\Images\ERP_Icon.svg" />
+    <Content Include="Content\Images\export.svg" />
+    <Content Include="Content\Images\eye-button-hide.svg" />
+    <Content Include="Content\Images\eye-button.svg" />
+    <Content Include="Content\Images\finish.svg" />
+    <Content Include="Content\Images\GridView-white.svg" />
+    <Content Include="Content\Images\GridView.svg" />
+    <Content Include="Content\Images\groups.svg" />
+    <Content Include="Content\Images\help.svg" />
+    <Content Include="Content\Images\Home-white.svg" />
+    <Content Include="Content\Images\Home.svg" />
+    <Content Include="Content\Images\image-sample.png" />
+    <Content Include="Content\Images\Info.svg" />
+    <Content Include="Content\Images\key.svg" />
+    <Content Include="Content\Images\kind1-white.svg" />
+    <Content Include="Content\Images\kind1.svg" />
+    <Content Include="Content\Images\kind2-white.svg" />
+    <Content Include="Content\Images\kind2.svg" />
+    <Content Include="Content\Images\logo-small.svg" />
+    <Content Include="Content\Images\logo.svg" />
+    <Content Include="Content\Images\man.svg" />
+    <Content Include="Content\Images\menu.svg" />
+    <Content Include="Content\Images\message-info.svg" />
+    <Content Include="Content\Images\message-warning.svg" />
+    <Content Include="Content\Images\message.svg" />
+    <Content Include="Content\Images\message_read.svg" />
+    <Content Include="Content\Images\message_unread.svg" />
+    <Content Include="Content\Images\office.svg" />
+    <Content Include="Content\Images\pause.svg" />
+    <Content Include="Content\Images\play-button.svg" />
+    <Content Include="Content\Images\print.svg" />
+    <Content Include="Content\Images\priority1-white.svg" />
+    <Content Include="Content\Images\priority1.svg" />
+    <Content Include="Content\Images\priority2-white.svg" />
+    <Content Include="Content\Images\priority2.svg" />
+    <Content Include="Content\Images\priority3-white.svg" />
+    <Content Include="Content\Images\priority3.svg" />
+    <Content Include="Content\Images\refresh.svg" />
+    <Content Include="Content\Images\save.svg" />
+    <Content Include="Content\Images\Scheduler-white.svg" />
+    <Content Include="Content\Images\Scheduler.svg" />
+    <Content Include="Content\Images\search-selected.svg" />
+    <Content Include="Content\Images\search.svg" />
+    <Content Include="Content\Images\sign-out.svg" />
+    <Content Include="Content\Images\up.svg" />
+    <Content Include="Content\Images\upload-file.svg" />
+    <Content Include="Content\Images\user.svg" />
+    <Content Include="Content\Images\warning-grey.svg" />
+    <Content Include="Content\Images\warning-yellow.svg" />
+    <Content Include="Content\Layout.css" />
+    <Content Include="Content\LogonWebForm.js" />
+    <Content Include="Content\Photo\Alberto_Alonso.jpg" />
+    <Content Include="Content\Photo\Alfredo_Gomez.jpg" />
+    <Content Include="Content\Photo\Andrew_Lee.jpg" />
+    <Content Include="Content\Photo\Angela_Murphy.jpg" />
+    <Content Include="Content\Photo\Clarence_Nath.jpg" />
+    <Content Include="Content\Photo\Colin_He.jpg" />
+    <Content Include="Content\Photo\Connor_Jenkins.jpg" />
+    <Content Include="Content\Photo\Connor_Lopez.jpg" />
+    <Content Include="Content\Photo\Destiny_Clark.jpg" />
+    <Content Include="Content\Photo\Diana_Martin.jpg" />
+    <Content Include="Content\Photo\Gary_Rubio.jpg" />
+    <Content Include="Content\Photo\Heidi_Lopez.jpg" />
+    <Content Include="Content\Photo\Jesse_Gonzalez.jpg" />
+    <Content Include="Content\Photo\Jessie_She.jpg" />
+    <Content Include="Content\Photo\Julia_Bell.jpg" />
+    <Content Include="Content\Photo\Julia_Evans.jpg" />
+    <Content Include="Content\Photo\Katelyn_Lopez.jpg" />
+    <Content Include="Content\Photo\Kevin_Collins.jpg" />
+    <Content Include="Content\Photo\Logan_Hernandez.jpg" />
+    <Content Include="Content\Photo\Maria_Hernandez.jpg" />
+    <Content Include="Content\Photo\Martha_Gao.jpg" />
+    <Content Include="Content\Photo\Megan_Sanchez.jpg" />
+    <Content Include="Content\Photo\Miguel_Jones.jpg" />
+    <Content Include="Content\Photo\Naomi_Moreno.jpg" />
+    <Content Include="Content\Photo\Nathan_Bryant.jpg" />
+    <Content Include="Content\Photo\Rafael_Raje.jpg" />
+    <Content Include="Content\Photo\Rebekah_Raman.jpg" />
+    <Content Include="Content\Photo\Shannon_Sanz.jpg" />
+    <Content Include="Content\Photo\User.png" />
+    <Content Include="Content\Photo\Xavier_Richardson.jpg" />
+    <Content Include="Content\Script.js" />
+    <Content Include="Content\SignInRegister.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="Functions\DialogUserControl.ascx" />
+    <Content Include="Global.asax" />
+    <Content Include="PrivacyPolicy.aspx" />
+    <Content Include="Forms\Users\LogonWebForm.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Root.master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content.ashx" />
+    <None Include="Web.config" />
+    <None Include="packages.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Content.ashx.cs">
+      <DependentUpon>Content.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Files\MimeType.cs" />
+    <Compile Include="Functions\AppVersion.cs" />
+    <Compile Include="Functions\Constants.cs" />
+    <Compile Include="Functions\DialogUserControl.ascx.cs">
+      <DependentUpon>DialogUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Functions\DialogUserControl.ascx.designer.cs">
+      <DependentUpon>DialogUserControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Functions\StrToDate.cs" />
+    <Compile Include="Functions\StrToDateTime.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Calls\Call.cs" />
+    <Compile Include="Models\Conferences\Conference.cs" />
+    <Compile Include="Models\Contacts\Contact.cs" />
+    <Compile Include="Models\Users\AuthHelper.cs" />
+    <Compile Include="PrivacyPolicy.aspx.cs">
+      <DependentUpon>PrivacyPolicy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrivacyPolicy.aspx.designer.cs">
+      <DependentUpon>PrivacyPolicy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Resource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Root.master.cs">
+      <DependentUpon>Root.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Root.master.designer.cs">
+      <DependentUpon>Root.master</DependentUpon>
+    </Compile>
+    <Compile Include="Routes\Route.cs" />
+    <Compile Include="Token.cs" />
+    <Compile Include="Forms\Users\LogonWebForm.aspx.cs">
+      <DependentUpon>LogonWebForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Users\LogonWebForm.aspx.designer.cs">
+      <DependentUpon>LogonWebForm.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\licenses.licx" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Resource.de.resx" />
+    <EmbeddedResource Include="Resources\Resource.ru.resx" />
+    <EmbeddedResource Include="Resources\Resource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>52202</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:52233/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

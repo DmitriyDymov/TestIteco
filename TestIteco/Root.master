@@ -1,0 +1,221 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Root.master.cs" Inherits="TestIteco.Root" %>
+
+<%@ Register Src="~/Functions/DialogUserControl.ascx" TagPrefix="ucGroup" TagName="DialogUserControl" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server" enableviewstate="false">
+    <meta charset="UTF-8" />
+    <title>Performer</title>
+    <link rel="shortcut icon" href='<%# ResolveUrl("~/Content/Images/ERP_Icon.ico") %>' type="image/x-icon">
+    <meta name="viewport" content="width=device-width, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href='<%# ResolveUrl("~/Content.ashx?Name=Content.css") %>' />
+    <link rel="stylesheet" type="text/css" href='<%# ResolveUrl("~/Content.ashx?Name=Layout.css") %>' />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src='<%# ResolveUrl("~/Content.ashx?Name=Script.js") %>'></script>
+    <script type="text/javascript" src='<%# ResolveUrl("~/Content.ashx?Name=Functions.js") %>'></script>
+    <script type="text/javascript" src='<%# ResolveUrl("~/Content.ashx?Name=DialogUserControl.js") %>'></script>
+    <script type="text/javascript" src='<%# ResolveUrl("~/Content.ashx?Name=UserMessagesUserControl.js") %>'></script>
+    <asp:ContentPlaceHolder ID="Head" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server" class="form">
+        <dx:ASPxPanel runat="server" ID="HeaderPanel" ClientInstanceName="headerPanel" FixedPosition="WindowTop"
+            FixedPositionOverlap="true" CssClass="app-header">
+
+            <PanelCollection>
+                <dx:PanelContent runat="server">
+                    <div class="left-block">
+                        <dx:ASPxMenu runat="server" ID="LeftAreaMenu" ClientInstanceName="leftAreaMenu"
+                            ItemAutoWidth="false" ItemWrap="false" SeparatorWidth="0" EnableHotTrack="false"
+                            Width="100%" CssClass="header-menu" SyncSelectionMode="None">
+
+                            <ItemStyle VerticalAlign="Middle" CssClass="item" />
+                            <Items>
+                                <dx:MenuItem Text="" Name="ToggleLeftPanel" GroupName="LeftPanel">
+                                    <ItemStyle CssClass="toggle-item vertically-aligned" CheckedStyle-CssClass="checked selected" />
+                                    <Image Url="~/Content/Images/menu.svg" Height="18px" Width="18px" />
+                                </dx:MenuItem>
+                                <dx:MenuItem Text="" Name="Back">
+                                    <ItemStyle CssClass="toggle-item vertically-aligned" />
+                                    <Image Url="~/Content/Images/back.svg" Height="18px" Width="18px" />
+                                </dx:MenuItem>
+                                <dx:MenuItem ItemStyle-CssClass="image-item vertically-aligned" NavigateUrl="~/">
+                                    <%--<Image SpriteProperties-CssClass="header-logo" />--%>
+                                    <Template>
+                                        <table style="width: 200px; height: 45px;">
+                                            <tr>
+                                                <td style="width: 30%; text-align: right; padding-left: 20px; padding-top: 5px;">
+                                                    <img width="40" height="40" src="/Content/Images/ERP_icon.svg" alt="" />
+                                                </td>
+                                                <td style="width: 70%; text-align: left; padding-left: 20px; padding-top: 5px;">
+                                                    <span style="font-family: Roboto; font-size: 20px;">Performer
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </Template>
+                                </dx:MenuItem>
+                            </Items>
+                            <ClientSideEvents ItemClick="onLeftMenuItemClick" />
+                        </dx:ASPxMenu>
+                    </div>
+
+                    <div class="right-block">
+                        <dx:ASPxMenu runat="server" ID="RightAreaMenu" ClientInstanceName="rightAreaMenu"
+                            ItemAutoWidth="false" ItemWrap="false" ShowPopOutImages="False"
+                            SeparatorWidth="0" ApplyItemStyleToTemplates="true"
+                            Width="100%" CssClass="header-menu" OnItemClick="RightAreaMenu_ItemClick">
+                            <ItemStyle VerticalAlign="Middle" CssClass="item" />
+                            <SubMenuItemStyle CssClass="item" />
+                            <SubMenuStyle CssClass="header-sub-menu" />
+                            <Items>
+                                <dx:MenuItem Name="AccountItem" ItemStyle-CssClass="image-item">
+                                    <TextTemplate>
+                                        <div class="account-background">
+                                            <div class="user-info">
+                                                <div class="avatar">
+                                                    <img runat="server" id="AvatarUrl" src="/Files/CurrentUserPhotoPreview.ashx?Size=MIN" alt="" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </TextTemplate>
+                                    <Items>
+                                        <dx:MenuItem Name="MyAccountItem" Text="Мой аккаунт" ItemStyle-CssClass="myaccount-item">
+                                            <TextTemplate>
+                                                <a href="/UserPage">
+                                                    <div class="user-info">
+                                                        <div class="text-container">
+                                                            <dx:ASPxLabel ID="UserNameLabel" runat="server" CssClass="user-name"></dx:ASPxLabel>
+                                                            <dx:ASPxLabel ID="EmailLabel" runat="server" CssClass="email"></dx:ASPxLabel>
+                                                            <dx:ASPxLabel ID="CompanyNameLabel" runat="server" CssClass="email"></dx:ASPxLabel>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </TextTemplate>
+                                        </dx:MenuItem>
+
+                                        <dx:MenuItem Name="SignOutItem" Text="Выйти" Image-Url="Content/Images/sign-out.svg" Image-Height="16px"></dx:MenuItem>
+
+                                    </Items>
+                                </dx:MenuItem>
+                                <dx:MenuItem Text="" Name="ToggleRightPanel" GroupName="RightPanel">
+                                    <ItemStyle CssClass="toggle-item vertically-aligned" CheckedStyle-CssClass="checked selected" />
+                                    <Image Height="18px" SpriteProperties-CssClass="image" />
+                                </dx:MenuItem>
+                            </Items>
+                            <ClientSideEvents ItemClick="onRightMenuItemClick" />
+                        </dx:ASPxMenu>
+                    </div>
+                    <div class="menu-container">
+                        <div>
+                            <dx:ASPxMenu runat="server" ID="ApplicationMenu" ClientInstanceName="applicationMenu"
+                                ItemAutoWidth="false" EnableSubMenuScrolling="true"
+                                ShowPopOutImages="True" SeparatorWidth="0" ItemWrap="false"
+                                CssClass="header-menu application-menu" Width="100%" HorizontalAlign="Right" OnItemDataBound="ApplicationMenu_ItemDataBound">
+                                <SettingsAdaptivity Enabled="true" EnableAutoHideRootItems="true" />
+                                <ItemStyle VerticalAlign="Middle" CssClass="item" SelectedStyle-CssClass="selected" HoverStyle-CssClass="hovered" />
+                                <ItemImage Width="22" Height="22" />
+                                <SubMenuStyle CssClass="header-sub-menu" />
+                                <AdaptiveMenuImage SpriteProperties-CssClass="adaptive-image" />
+                                <ClientSideEvents ItemClick="function (s,e) {showProgressBar();}"></ClientSideEvents>
+                            </dx:ASPxMenu>
+                        </div>
+                    </div>
+                    <div class="dx-clear"></div>
+                    <div id="ProgressBlock">
+                        <div id="BarBlock"></div>
+                    </div>
+                    <div id="message-block">
+                        <table>
+                            <tr>
+                                <td style="vertical-align: middle; padding-top: 2px;">
+                                    <img id="message-image" alt="" width="25" style="margin-right: 5px;" />
+                                </td>
+                                <td style="vertical-align: middle; padding-left: 10px;">
+                                    <span id="message-text">Message</span>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </dx:PanelContent>
+            </PanelCollection>
+        </dx:ASPxPanel>
+
+        <dx:ASPxPanel runat="server" ID="LeftPanel" ClientInstanceName="leftPanel"
+            Collapsible="true" ScrollBars="Auto" FixedPosition="WindowLeft" Width="272px"
+            CssClass="left-panel" Styles-ExpandBar-CssClass="expand-bar">
+            <Paddings PaddingTop="10"></Paddings>
+            <SettingsAdaptivity CollapseAtWindowInnerWidth="960" />
+            <SettingsCollapsing ExpandButton-Visible="false" ExpandEffect="PopupToRight" AnimationType="Slide" Modal="true" />
+            <PanelCollection>
+                <dx:PanelContent>
+                    <asp:ContentPlaceHolder runat="server" ID="LeftPanelContent"></asp:ContentPlaceHolder>
+                </dx:PanelContent>
+            </PanelCollection>
+            <ClientSideEvents Init="onLeftPanelInit" Collapsed="onLeftPanelCollapsed" />
+        </dx:ASPxPanel>
+
+        <dx:ASPxPanel runat="server" ID="RightPanel" ClientInstanceName="rightPanel"
+            FixedPosition="WindowRight" FixedPositionOverlap="true" Collapsible="true" Paddings-Padding="0"
+            ScrollBars="Auto" Width="260px" CssClass="right-panel" Styles-ExpandBar-CssClass="expand-bar">
+            <SettingsCollapsing ExpandButton-Visible="false" ExpandEffect="PopupToLeft" Modal="true" />
+            <PanelCollection>
+                <dx:PanelContent>
+
+                    <dx:ASPxNavBar runat="server" ID="AdminNavBar" ClientInstanceName="adminNavBar"
+                        AllowSelectItem="true" ShowGroupHeaders="True"
+                        Width="100%" CssClass="filters-navbar">
+                        <ItemStyle CssClass="item" />
+                        <Groups>
+                            <dx:NavBarGroup>
+                                <Items>
+                                    <dx:NavBarItem Text="All" Selected="true" Name="All" />
+                                    <dx:NavBarItem Text="Active issues" Name="Active" />
+                                    <dx:NavBarItem Text="Bugs" Name="Bugs" />
+                                    <dx:NavBarItem Text="Suggestions" Name="Suggestions" />
+                                    <dx:NavBarItem Text="High priority" Name="HighPriority" />
+                                </Items>
+                            </dx:NavBarGroup>
+                        </Groups>
+                    </dx:ASPxNavBar>
+
+                    <asp:ContentPlaceHolder ID="RightPanelContent" runat="server"></asp:ContentPlaceHolder>
+                </dx:PanelContent>
+            </PanelCollection>
+            <ClientSideEvents Collapsed="onRightPanelCollapsed" />
+        </dx:ASPxPanel>
+
+        <dx:ASPxPanel runat="server" ID="PageToolbarPanel" ClientInstanceName="pageToolbarPanel"
+            CssClass="page-toolbar-wrapper">
+            <PanelCollection>
+                <dx:PanelContent>
+                    <asp:ContentPlaceHolder runat="server" ID="PageToolbar" />
+                </dx:PanelContent>
+            </PanelCollection>
+            <ClientSideEvents Init="onPageToolbarInit" />
+        </dx:ASPxPanel>
+
+        <div class="content" id="pageContent">
+            <asp:ContentPlaceHolder runat="server" ID="PageContent"></asp:ContentPlaceHolder>
+            <div class="footer-wrapper" id="footerWrapper">
+                <div class="footer">
+                    <span id="CompanyLabel" runat="server" class="footer-left"></span>
+                    <span class="footer-right">
+                        <a class="footer-link" href="#">Privacy Policy</a>
+                        <a class="footer-link" href="#">Terms of Service</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <dx:ASPxGlobalEvents runat="server">
+            <ClientSideEvents ControlsInitialized="onControlsInitialized" BrowserWindowResized="onBrowserWindowResized" />
+        </dx:ASPxGlobalEvents>
+
+        <ucGroup:DialogUserControl runat="server" ID="DialogUserControl" />
+
+    </form>
+</body>
+</html>

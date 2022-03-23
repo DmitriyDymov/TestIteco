@@ -1,0 +1,910 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3B5EF65C-E76A-4854-96AA-7267EF3B1FB1}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TestIteco</RootNamespace>
+    <AssemblyName>TestIteco</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <UpgradeBackupLocation />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Web.Bootstrap.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.Resources.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="ImageResizer, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ImageResizer.4.2.8\lib\net45\ImageResizer.dll</HintPath>
+    </Reference>
+    <Reference Include="MailLib">
+      <HintPath>..\..\..\DEKRA Projects\Projects\MailLib\MailLib\bin\Debug\MailLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=2.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.2.1.1\lib\netstandard2.0\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Quartz, Version=3.3.2.0, Culture=neutral, PublicKeyToken=f6b8c98a402cc8a4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Quartz.3.3.2\lib\net472\Quartz.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.5.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.7.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Web.ASPxThemes.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v19.2.Export, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Web.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraScheduler.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Web.ASPxScheduler.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Account\Register.aspx" />
+    <Content Include="Account\SignIn.aspx" />
+    <Content Include="App_Data\Article.html" />
+    <Content Include="App_Data\ArticleContents.xml" />
+    <Content Include="App_Data\Overview.html" />
+    <Content Include="App_Data\OverviewContents.xml" />
+    <Content Include="Article.aspx" />
+    <Content Include="Content\CompaniesWebForm.js" />
+    <Content Include="Content\Content.css" />
+    <Content Include="Content\FileTypes\Document_48x67.png" />
+    <Content Include="Content\FileTypes\File_48x67.png" />
+    <Content Include="Content\FileTypes\ImageGallery_48x67.png" />
+    <Content Include="Content\FileTypes\Image_48x67.png" />
+    <Content Include="Content\FileTypes\Movie_48x67.png" />
+    <Content Include="Content\FileTypes\Music_48x67.png" />
+    <Content Include="Content\FileTypes\PDF_48x67.png" />
+    <Content Include="Content\FileTypes\Presentation_48x67.png" />
+    <Content Include="Content\FileTypes\SpreadSheet_48x67.png" />
+    <Content Include="Content\FileTypes\TextFile_48x67.png" />
+    <Content Include="Content\FileTypes\Zip_48x67.png" />
+    <Content Include="Content\Functions.js" />
+    <Content Include="Content\GridView.css" />
+    <Content Include="Content\GridView.js" />
+    <Content Include="Content\CompanyGroupsWebForm.js" />
+    <Content Include="Content\Images\adaptive-menu.svg" />
+    <Content Include="Content\Images\add.svg" />
+    <Content Include="Content\Images\application.svg" />
+    <Content Include="Content\Images\Article-white.svg" />
+    <Content Include="Content\Images\Article.svg" />
+    <Content Include="Content\Images\back.svg" />
+    <Content Include="Content\Images\camera.svg" />
+    <Content Include="Content\Images\cancel.svg" />
+    <Content Include="Content\Images\check.svg" />
+    <Content Include="Content\Images\chevron-down.svg" />
+    <Content Include="Content\Images\chevron-left.svg" />
+    <Content Include="Content\Images\chevron-right.svg" />
+    <Content Include="Content\Images\chevron-up.svg" />
+    <Content Include="Content\Images\delete.svg" />
+    <Content Include="Content\Images\double-close.svg" />
+    <Content Include="Content\Images\double.svg" />
+    <Content Include="Content\Images\down.svg" />
+    <Content Include="Content\Images\edit.svg" />
+    <Content Include="Content\Images\export.svg" />
+    <Content Include="Content\Images\eye-button-hide.svg" />
+    <Content Include="Content\Images\eye-button.svg" />
+    <Content Include="Content\Images\finish.svg" />
+    <Content Include="Content\Images\GridView-white.svg" />
+    <Content Include="Content\Images\GridView.svg" />
+    <Content Include="Content\Images\groups.svg" />
+    <Content Include="Content\Images\help.svg" />
+    <Content Include="Content\Images\Home-white.svg" />
+    <Content Include="Content\Images\Home.svg" />
+    <Content Include="Content\Images\image-sample.png" />
+    <Content Include="Content\Images\kind1-white.svg" />
+    <Content Include="Content\Images\kind1.svg" />
+    <Content Include="Content\Images\kind2-white.svg" />
+    <Content Include="Content\Images\kind2.svg" />
+    <Content Include="Content\Images\logo-small.svg" />
+    <Content Include="Content\Images\logo.svg" />
+    <Content Include="Content\Images\menu.svg" />
+    <Content Include="Content\Images\Overview\article.png" />
+    <Content Include="Content\Images\Overview\demo.png" />
+    <Content Include="Content\Images\Overview\grid.png" />
+    <Content Include="Content\Images\Overview\login.gif" />
+    <Content Include="Content\Images\Overview\login.png" />
+    <Content Include="Content\Images\Overview\menu.gif" />
+    <Content Include="Content\Images\Overview\scheduler.png" />
+    <Content Include="Content\Images\Overview\sidebar.gif" />
+    <Content Include="Content\Images\Overview\sticky-footer.gif" />
+    <Content Include="Content\Images\Overview\toolbar.gif" />
+    <Content Include="Content\Images\pause.svg" />
+    <Content Include="Content\Images\play-button.svg" />
+    <Content Include="Content\Images\print.svg" />
+    <Content Include="Content\Images\priority1-white.svg" />
+    <Content Include="Content\Images\priority1.svg" />
+    <Content Include="Content\Images\priority2-white.svg" />
+    <Content Include="Content\Images\priority2.svg" />
+    <Content Include="Content\Images\priority3-white.svg" />
+    <Content Include="Content\Images\priority3.svg" />
+    <Content Include="Content\Images\save.svg" />
+    <Content Include="Content\Images\Scheduler-white.svg" />
+    <Content Include="Content\Images\Scheduler.svg" />
+    <Content Include="Content\Images\search-selected.svg" />
+    <Content Include="Content\Images\search.svg" />
+    <Content Include="Content\Images\sign-out.svg" />
+    <Content Include="Content\Images\up.svg" />
+    <Content Include="Content\Images\upload-file.svg" />
+    <Content Include="Content\Images\user.svg" />
+    <Content Include="Content\Layout.css" />
+    <Content Include="Content\Photo\Alberto_Alonso.jpg" />
+    <Content Include="Content\Photo\Alfredo_Gomez.jpg" />
+    <Content Include="Content\Photo\Andrew_Lee.jpg" />
+    <Content Include="Content\Photo\Angela_Murphy.jpg" />
+    <Content Include="Content\Photo\Clarence_Nath.jpg" />
+    <Content Include="Content\Photo\Colin_He.jpg" />
+    <Content Include="Content\Photo\Connor_Jenkins.jpg" />
+    <Content Include="Content\Photo\Connor_Lopez.jpg" />
+    <Content Include="Content\Photo\Destiny_Clark.jpg" />
+    <Content Include="Content\Photo\Diana_Martin.jpg" />
+    <Content Include="Content\Photo\Gary_Rubio.jpg" />
+    <Content Include="Content\Photo\Heidi_Lopez.jpg" />
+    <Content Include="Content\Photo\Jesse_Gonzalez.jpg" />
+    <Content Include="Content\Photo\Jessie_She.jpg" />
+    <Content Include="Content\Photo\Julia_Bell.jpg" />
+    <Content Include="Content\Photo\Julia_Evans.jpg" />
+    <Content Include="Content\Photo\Katelyn_Lopez.jpg" />
+    <Content Include="Content\Photo\Kevin_Collins.jpg" />
+    <Content Include="Content\Photo\Logan_Hernandez.jpg" />
+    <Content Include="Content\Photo\Maria_Hernandez.jpg" />
+    <Content Include="Content\Photo\Martha_Gao.jpg" />
+    <Content Include="Content\Photo\Megan_Sanchez.jpg" />
+    <Content Include="Content\Photo\Miguel_Jones.jpg" />
+    <Content Include="Content\Photo\Naomi_Moreno.jpg" />
+    <Content Include="Content\Photo\Nathan_Bryant.jpg" />
+    <Content Include="Content\Photo\Rafael_Raje.jpg" />
+    <Content Include="Content\Photo\Rebekah_Raman.jpg" />
+    <Content Include="Content\Photo\Shannon_Sanz.jpg" />
+    <Content Include="Content\Photo\User.png" />
+    <Content Include="Content\Photo\Xavier_Richardson.jpg" />
+    <Content Include="Content\ReportsRegistryWebForm.js" />
+    <Content Include="Content\Scheduler.css" />
+    <Content Include="Content\Scheduler.js" />
+    <Content Include="Content\Script.js" />
+    <Content Include="Content\ScriptEditWebForm.js" />
+    <Content Include="Content\ScriptGroupsWebForm.js" />
+    <Content Include="Content\ScriptsWebForm.js" />
+    <Content Include="Content\SignInRegister.css" />
+    <Content Include="Content\SignInRegister.js" />
+    <Content Include="Content\StepEditWebForm.js" />
+    <Content Include="Content\TaskEditWebForm.js" />
+    <Content Include="Content\TasksUserWebForm.js" />
+    <Content Include="Content\TasksWebForm.js" />
+    <Content Include="Content\upload-file.svg" />
+    <Content Include="Content\UsersWebForm.js" />
+    <Content Include="Default.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="GridView.aspx" />
+    <Content Include="GridViewDetailsPage.aspx" />
+    <Content Include="Scheduler.aspx" />
+    <Content Include="Scripts\Groups\ScriptsGroupsUserControl.ascx" />
+    <Content Include="Scripts\ScriptCompanyAccessUserControl.ascx" />
+    <Content Include="Scripts\Steps\Fields\FieldComboUserControl.ascx" />
+    <Content Include="Scripts\Steps\Fields\FieldDateTimeUserControl.ascx" />
+    <Content Include="Scripts\Steps\Fields\FieldDateUserControl.ascx" />
+    <Content Include="Scripts\Steps\Fields\FieldDoubleUserControl.ascx" />
+    <Content Include="Scripts\Steps\Fields\FieldImagesUserControl.ascx" />
+    <Content Include="Scripts\Steps\Fields\FieldIntUserControl.ascx" />
+    <Content Include="Scripts\Steps\Fields\FieldListUserControl.ascx" />
+    <Content Include="Scripts\Steps\Fields\FieldMemoUserControl.ascx" />
+    <Content Include="Scripts\Steps\Fields\FieldTextUserControl.ascx" />
+    <Content Include="Scripts\Steps\Fields\FieldVideoUserControl.ascx" />
+    <Content Include="Tasks\Edits\CheckboxControl.ascx" />
+    <Content Include="Tasks\Edits\ComboControl.ascx" />
+    <Content Include="Tasks\Edits\DateControl.ascx" />
+    <Content Include="Tasks\Edits\DateTimeControl.ascx" />
+    <Content Include="Tasks\Edits\DoubleControl.ascx" />
+    <Content Include="Tasks\Edits\FilesControl.ascx" />
+    <Content Include="Tasks\Edits\ImagesDamageControl.ascx" />
+    <Content Include="Tasks\Edits\ImagesMediumControl.ascx" />
+    <Content Include="Tasks\Edits\IntegerControl.ascx" />
+    <Content Include="Tasks\Edits\MemoControl.ascx" />
+    <Content Include="Tasks\Edits\PartsControl.ascx" />
+    <Content Include="Tasks\Edits\Rows\FileRow.ascx" />
+    <Content Include="Tasks\Edits\Rows\ImageDamageRow.ascx" />
+    <Content Include="Tasks\Edits\Rows\ImageMediumRow.ascx" />
+    <Content Include="Tasks\Edits\TextControl.ascx" />
+    <Content Include="Tasks\Edits\VehicleControl.ascx" />
+    <Content Include="Tasks\Edits\VideoControl.ascx" />
+    <Content Include="Tasks\Views\CheckboxViewControl.ascx" />
+    <Content Include="Tasks\Views\ComboViewControl.ascx" />
+    <Content Include="Tasks\Views\DateTimeViewControl.ascx" />
+    <Content Include="Tasks\Views\DateViewControl.ascx" />
+    <Content Include="Tasks\Views\DoubleViewControl.ascx" />
+    <Content Include="Tasks\Views\ImagesDamageViewControl.ascx" />
+    <Content Include="Tasks\Views\ImagesMediumViewControl.ascx" />
+    <Content Include="Tasks\Views\IntegerViewControl.ascx" />
+    <Content Include="Tasks\Views\MemoViewControl.ascx" />
+    <Content Include="Tasks\Views\PartsViewControl.ascx" />
+    <Content Include="Tasks\Views\Rows\ImageDamageViewRow.ascx" />
+    <Content Include="Tasks\Views\Rows\ImageMediumViewRow.ascx" />
+    <Content Include="Tasks\Views\TextViewControl.ascx" />
+    <Content Include="Tasks\Views\VehicleViewControl.ascx" />
+    <Content Include="Tasks\Views\VideoViewControl.ascx" />
+    <Content Include="Users\Companies\Groups\CompanyGroupsUserControl.ascx" />
+    <Content Include="Users\LogonWebForm.aspx" />
+    <Content Include="Users\RePassWebForm.aspx" />
+    <Content Include="Scripts\ScriptsWebForm.aspx" />
+    <Content Include="Scripts\Steps\StepEditWebForm.aspx" />
+    <Content Include="Tasks\TasksWebForm.aspx" />
+    <Content Include="Tasks\TaskEditWebForm.aspx" />
+    <Content Include="Tasks\TasksUserWebForm.aspx" />
+    <Content Include="Users\Companies\CompaniesWebForm.aspx" />
+    <Content Include="Users\Companies\Groups\GroupsWebForm.aspx" />
+    <Content Include="Users\UsersWebForm.aspx" />
+    <Content Include="Scripts\ScriptEditWebForm.aspx" />
+    <Content Include="Users\UserPageWebForm.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Root.master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\ApplicationMenuDataSource.sitemap" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Web.config" />
+    <Content Include="Files\ScriptImageDownload.ashx" />
+    <Content Include="Files\ScriptImagePreview.ashx" />
+    <Content Include="Files\TaskImageDamagePreview.ashx" />
+    <Content Include="Files\TaskImageDamageDownload.ashx" />
+    <Content Include="Files\TaskImageDownload.ashx" />
+    <Content Include="Files\TaskImagePreview.ashx" />
+    <Content Include="Files\FileTypeDownload.ashx" />
+    <Content Include="Files\TaskFileDownload.ashx" />
+    <None Include="packages.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Account\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\SignIn.aspx.cs">
+      <DependentUpon>SignIn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\SignIn.aspx.designer.cs">
+      <DependentUpon>SignIn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Article.aspx.cs">
+      <DependentUpon>Article.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Article.aspx.designer.cs">
+      <DependentUpon>Article.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Code\AuthHelper.cs" />
+    <Compile Include="Code\DBContext.cs" />
+    <Compile Include="Crypto\Hash.cs" />
+    <Compile Include="Crypto\RndStrings.cs" />
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Files\FileTypeDownload.ashx.cs">
+      <DependentUpon>FileTypeDownload.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Files\ImageResize.cs" />
+    <Compile Include="Files\MimeType.cs" />
+    <Compile Include="Files\ScriptImageDownload.ashx.cs">
+      <DependentUpon>ScriptImageDownload.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Files\ScriptImagePreview.ashx.cs">
+      <DependentUpon>ScriptImagePreview.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Files\TaskFileDownload.ashx.cs">
+      <DependentUpon>TaskFileDownload.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Files\TaskImageDamageDownload.ashx.cs">
+      <DependentUpon>TaskImageDamageDownload.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Files\TaskImageDamagePreview.ashx.cs">
+      <DependentUpon>TaskImageDamagePreview.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Files\TaskImageDownload.ashx.cs">
+      <DependentUpon>TaskImageDownload.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Files\TaskImagePreview.ashx.cs">
+      <DependentUpon>TaskImagePreview.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Functions\StrToDate.cs" />
+    <Compile Include="Functions\StrToDateTime.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="GridView.aspx.cs">
+      <DependentUpon>GridView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GridView.aspx.designer.cs">
+      <DependentUpon>GridView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GridViewDetailsPage.aspx.cs">
+      <DependentUpon>GridViewDetailsPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GridViewDetailsPage.aspx.designer.cs">
+      <DependentUpon>GridViewDetailsPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Jobs\MailSendJob.cs" />
+    <Compile Include="Mail\MailMessage.cs" />
+    <Compile Include="Mail\Template.cs" />
+    <Compile Include="Resources\Resource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Root.master.cs">
+      <DependentUpon>Root.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Root.master.designer.cs">
+      <DependentUpon>Root.master</DependentUpon>
+    </Compile>
+    <Compile Include="Routes\Route.cs" />
+    <Compile Include="Scheduler.aspx.cs">
+      <DependentUpon>Scheduler.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Scheduler.aspx.designer.cs">
+      <DependentUpon>Scheduler.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Scripts\Groups\ScriptGroup.cs" />
+    <Compile Include="Scripts\Groups\ScriptsGroupsUserControl.ascx.cs">
+      <DependentUpon>ScriptsGroupsUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Scripts\Groups\ScriptsGroupsUserControl.ascx.designer.cs">
+      <DependentUpon>ScriptsGroupsUserControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Scripts\Script.cs" />
+    <Compile Include="Scripts\ScriptCompanyAccess.cs" />
+    <Compile Include="Scripts\ScriptCompanyAccessUserControl.ascx.cs">
+      <DependentUpon>ScriptCompanyAccessUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Scripts\ScriptCompanyAccessUserControl.ascx.designer.cs">
+      <DependentUpon>ScriptCompanyAccessUserControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Scripts\ScriptImage.cs" />
+    <Compile Include="Scripts\Steps\Fields\Field.cs" />
+    <Compile Include="Scripts\Steps\Fields\FieldCombo.cs" />
+    <Compile Include="Scripts\Steps\Fields\FieldComboUserControl.ascx.cs">
+      <DependentUpon>FieldComboUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Scripts\Steps\Fields\FieldComboUserControl.ascx.designer.cs">
+      <DependentUpon>FieldComboUserControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Scripts\Steps\Fields\FieldDate.cs" />
+    <Compile Include="Scripts\Steps\Fields\FieldDateTime.cs" />
+    <Compile Include="Scripts\Steps\Fields\FieldDateTimeUserControl.ascx.cs">
+      <DependentUpon>FieldDateTimeUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Scripts\Steps\Fields\FieldDateTimeUserControl.ascx.designer.cs">
+      <DependentUpon>FieldDateTimeUserControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Scripts\Steps\Fields\FieldDateUserControl.ascx.cs">
+      <DependentUpon>FieldDateUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Scripts\Steps\Fields\FieldDateUserControl.ascx.designer.cs">
+      <DependentUpon>FieldDateUserControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Scripts\Steps\Fields\FieldDouble.cs" />
+    <Compile Include="Scripts\Steps\Fields\FieldDoubleUserControl.ascx.cs">
+      <DependentUpon>FieldDoubleUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Scripts\Steps\Fields\FieldDoubleUserControl.ascx.designer.cs">
+      <DependentUpon>FieldDoubleUserControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Scripts\Steps\Fields\FieldImages.cs" />
+    <Compile Include="Scripts\Steps\Fields\FieldImagesUserControl.ascx.cs">
+      <DependentUpon>FieldImagesUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Scripts\Steps\Fields\FieldImagesUserControl.ascx.designer.cs">
+      <DependentUpon>FieldImagesUserControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Scripts\Steps\Fields\FieldInt.cs" />
+    <Compile Include="Scripts\Steps\Fields\FieldIntUserControl.ascx.cs">
+      <DependentUpon>FieldIntUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Scripts\Steps\Fields\FieldIntUserControl.ascx.designer.cs">
+      <DependentUpon>FieldIntUserControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Scripts\Steps\Fields\FieldList.cs" />
+    <Compile Include="Scripts\Steps\Fields\FieldListUserControl.ascx.cs">
+      <DependentUpon>FieldListUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Scripts\Steps\Fields\FieldListUserControl.ascx.designer.cs">
+      <DependentUpon>FieldListUserControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Scripts\Steps\Fields\FieldMemo.cs" />
+    <Compile Include="Scripts\Steps\Fields\FieldMemoUserControl.ascx.cs">
+      <DependentUpon>FieldMemoUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Scripts\Steps\Fields\FieldMemoUserControl.ascx.designer.cs">
+      <DependentUpon>FieldMemoUserControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Scripts\Steps\Fields\FieldText.cs" />
+    <Compile Include="Scripts\Steps\Fields\FieldTextUserControl.ascx.cs">
+      <DependentUpon>FieldTextUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Scripts\Steps\Fields\FieldTextUserControl.ascx.designer.cs">
+      <DependentUpon>FieldTextUserControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Scripts\Steps\Fields\FieldType.cs" />
+    <Compile Include="Scripts\Steps\Fields\FieldVideo.cs" />
+    <Compile Include="Scripts\Steps\Fields\FieldVideoUserControl.ascx.cs">
+      <DependentUpon>FieldVideoUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Scripts\Steps\Fields\FieldVideoUserControl.ascx.designer.cs">
+      <DependentUpon>FieldVideoUserControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Scripts\Steps\Step.cs" />
+    <Compile Include="Tasks\Edits\CheckboxControl.ascx.cs">
+      <DependentUpon>CheckboxControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tasks\Edits\CheckboxControl.ascx.designer.cs">
+      <DependentUpon>CheckboxControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Tasks\Edits\ComboControl.ascx.cs">
+      <DependentUpon>ComboControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tasks\Edits\ComboControl.ascx.designer.cs">
+      <DependentUpon>ComboControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Tasks\Edits\DateControl.ascx.cs">
+      <DependentUpon>DateControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tasks\Edits\DateControl.ascx.designer.cs">
+      <DependentUpon>DateControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Tasks\Edits\DateTimeControl.ascx.cs">
+      <DependentUpon>DateTimeControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tasks\Edits\DateTimeControl.ascx.designer.cs">
+      <DependentUpon>DateTimeControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Tasks\Edits\DoubleControl.ascx.cs">
+      <DependentUpon>DoubleControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tasks\Edits\DoubleControl.ascx.designer.cs">
+      <DependentUpon>DoubleControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Tasks\Edits\FilesControl.ascx.cs">
+      <DependentUpon>FilesControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tasks\Edits\FilesControl.ascx.designer.cs">
+      <DependentUpon>FilesControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Tasks\Edits\IEditControl.cs" />
+    <Compile Include="Tasks\Edits\ImagesDamageControl.ascx.cs">
+      <DependentUpon>ImagesDamageControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tasks\Edits\ImagesDamageControl.ascx.designer.cs">
+      <DependentUpon>ImagesDamageControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Tasks\Edits\ImagesMediumControl.ascx.cs">
+      <DependentUpon>ImagesMediumControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tasks\Edits\ImagesMediumControl.ascx.designer.cs">
+      <DependentUpon>ImagesMediumControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Tasks\Edits\IntegerControl.ascx.cs">
+      <DependentUpon>IntegerControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tasks\Edits\IntegerControl.ascx.designer.cs">
+      <DependentUpon>IntegerControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Tasks\Edits\MemoControl.ascx.cs">
+      <DependentUpon>MemoControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tasks\Edits\MemoControl.ascx.designer.cs">
+      <DependentUpon>MemoControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Tasks\Edits\PartsControl.ascx.cs">
+      <DependentUpon>PartsControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tasks\Edits\PartsControl.ascx.designer.cs">
+      <DependentUpon>PartsControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Tasks\Edits\Rows\FileRow.ascx.cs">
+      <DependentUpon>FileRow.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tasks\Edits\Rows\FileRow.ascx.designer.cs">
+      <DependentUpon>FileRow.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Tasks\Edits\Rows\ImageDamageRow.ascx.cs">
+      <DependentUpon>ImageDamageRow.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tasks\Edits\Rows\ImageDamageRow.ascx.designer.cs">
+      <DependentUpon>ImageDamageRow.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Tasks\Edits\Rows\ImageMediumRow.ascx.cs">
+      <DependentUpon>ImageMediumRow.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tasks\Edits\Rows\ImageMediumRow.ascx.designer.cs">
+      <DependentUpon>ImageMediumRow.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Tasks\Edits\TextControl.ascx.cs">
+      <DependentUpon>TextControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tasks\Edits\TextControl.ascx.designer.cs">
+      <DependentUpon>TextControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Tasks\Edits\VehicleControl.ascx.cs">
+      <DependentUpon>VehicleControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tasks\Edits\VehicleControl.ascx.designer.cs">
+      <DependentUpon>VehicleControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Tasks\Edits\VideoControl.ascx.cs">
+      <DependentUpon>VideoControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tasks\Edits\VideoControl.ascx.designer.cs">
+      <DependentUpon>VideoControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Tasks\Fields\Field.cs" />
+    <Compile Include="Tasks\Fields\FieldCombo.cs" />
+    <Compile Include="Tasks\Fields\FieldDamage.cs" />
+    <Compile Include="Tasks\Fields\FieldDamageImage.cs" />
+    <Compile Include="Tasks\Fields\FieldDate.cs" />
+    <Compile Include="Tasks\Fields\FieldDateTime.cs" />
+    <Compile Include="Tasks\Fields\FieldDouble.cs" />
+    <Compile Include="Tasks\Fields\FieldFile.cs" />
+    <Compile Include="Tasks\Fields\FieldImage.cs" />
+    <Compile Include="Tasks\Fields\FieldInt.cs" />
+    <Compile Include="Tasks\Fields\FieldList.cs" />
+    <Compile Include="Tasks\Fields\FieldMemo.cs" />
+    <Compile Include="Tasks\Fields\FieldPart.cs" />
+    <Compile Include="Tasks\Fields\FieldText.cs" />
+    <Compile Include="Tasks\Fields\FieldVehicle.cs" />
+    <Compile Include="Tasks\Fields\FieldVideo.cs" />
+    <Compile Include="Tasks\Task.cs" />
+    <Compile Include="Tasks\Views\CheckboxViewControl.ascx.cs">
+      <DependentUpon>CheckboxViewControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tasks\Views\CheckboxViewControl.ascx.designer.cs">
+      <DependentUpon>CheckboxViewControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Tasks\Views\ComboViewControl.ascx.cs">
+      <DependentUpon>ComboViewControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tasks\Views\ComboViewControl.ascx.designer.cs">
+      <DependentUpon>ComboViewControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Tasks\Views\DateTimeViewControl.ascx.cs">
+      <DependentUpon>DateTimeViewControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tasks\Views\DateTimeViewControl.ascx.designer.cs">
+      <DependentUpon>DateTimeViewControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Tasks\Views\DateViewControl.ascx.cs">
+      <DependentUpon>DateViewControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tasks\Views\DateViewControl.ascx.designer.cs">
+      <DependentUpon>DateViewControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Tasks\Views\DoubleViewControl.ascx.cs">
+      <DependentUpon>DoubleViewControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tasks\Views\DoubleViewControl.ascx.designer.cs">
+      <DependentUpon>DoubleViewControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Tasks\Views\ImagesDamageViewControl.ascx.cs">
+      <DependentUpon>ImagesDamageViewControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tasks\Views\ImagesDamageViewControl.ascx.designer.cs">
+      <DependentUpon>ImagesDamageViewControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Tasks\Views\ImagesMediumViewControl.ascx.cs">
+      <DependentUpon>ImagesMediumViewControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tasks\Views\ImagesMediumViewControl.ascx.designer.cs">
+      <DependentUpon>ImagesMediumViewControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Tasks\Views\IntegerViewControl.ascx.cs">
+      <DependentUpon>IntegerViewControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tasks\Views\IntegerViewControl.ascx.designer.cs">
+      <DependentUpon>IntegerViewControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Tasks\Views\IViewControl.cs" />
+    <Compile Include="Tasks\Views\MemoViewControl.ascx.cs">
+      <DependentUpon>MemoViewControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tasks\Views\MemoViewControl.ascx.designer.cs">
+      <DependentUpon>MemoViewControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Tasks\Views\PartsViewControl.ascx.cs">
+      <DependentUpon>PartsViewControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tasks\Views\PartsViewControl.ascx.designer.cs">
+      <DependentUpon>PartsViewControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Tasks\Views\Rows\ImageDamageViewRow.ascx.cs">
+      <DependentUpon>ImageDamageViewRow.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tasks\Views\Rows\ImageDamageViewRow.ascx.designer.cs">
+      <DependentUpon>ImageDamageViewRow.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Tasks\Views\Rows\ImageMediumViewRow.ascx.cs">
+      <DependentUpon>ImageMediumViewRow.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tasks\Views\Rows\ImageMediumViewRow.ascx.designer.cs">
+      <DependentUpon>ImageMediumViewRow.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Tasks\Views\TextViewControl.ascx.cs">
+      <DependentUpon>TextViewControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tasks\Views\TextViewControl.ascx.designer.cs">
+      <DependentUpon>TextViewControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Tasks\Views\VehicleViewControl.ascx.cs">
+      <DependentUpon>VehicleViewControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tasks\Views\VehicleViewControl.ascx.designer.cs">
+      <DependentUpon>VehicleViewControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Tasks\Views\VideoViewControl.ascx.cs">
+      <DependentUpon>VideoViewControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tasks\Views\VideoViewControl.ascx.designer.cs">
+      <DependentUpon>VideoViewControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Users\Companies\Company.cs" />
+    <Compile Include="Users\Companies\Groups\CompanyGroupsUserControl.ascx.cs">
+      <DependentUpon>CompanyGroupsUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Users\Companies\Groups\CompanyGroupsUserControl.ascx.designer.cs">
+      <DependentUpon>CompanyGroupsUserControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Users\Companies\Groups\Group.cs" />
+    <Compile Include="Users\LogonWebForm.aspx.cs">
+      <DependentUpon>LogonWebForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Users\LogonWebForm.aspx.designer.cs">
+      <DependentUpon>LogonWebForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Users\RePass.cs" />
+    <Compile Include="Users\RePassWebForm.aspx.cs">
+      <DependentUpon>RePassWebForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Users\RePassWebForm.aspx.designer.cs">
+      <DependentUpon>RePassWebForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Users\User.cs" />
+    <Compile Include="Scripts\ScriptsWebForm.aspx.cs">
+      <DependentUpon>ScriptsWebForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Scripts\ScriptsWebForm.aspx.designer.cs">
+      <DependentUpon>ScriptsWebForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Scripts\Steps\StepEditWebForm.aspx.cs">
+      <DependentUpon>StepEditWebForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Scripts\Steps\StepEditWebForm.aspx.designer.cs">
+      <DependentUpon>StepEditWebForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tasks\TasksWebForm.aspx.cs">
+      <DependentUpon>TasksWebForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tasks\TasksWebForm.aspx.designer.cs">
+      <DependentUpon>TasksWebForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tasks\TaskEditWebForm.aspx.cs">
+      <DependentUpon>TaskEditWebForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tasks\TaskEditWebForm.aspx.designer.cs">
+      <DependentUpon>TaskEditWebForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tasks\TasksUserWebForm.aspx.cs">
+      <DependentUpon>TasksUserWebForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tasks\TasksUserWebForm.aspx.designer.cs">
+      <DependentUpon>TasksUserWebForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Users\Companies\CompaniesWebForm.aspx.cs">
+      <DependentUpon>CompaniesWebForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Users\Companies\CompaniesWebForm.aspx.designer.cs">
+      <DependentUpon>CompaniesWebForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Users\Companies\Groups\GroupsWebForm.aspx.cs">
+      <DependentUpon>GroupsWebForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Users\Companies\Groups\GroupsWebForm.aspx.designer.cs">
+      <DependentUpon>GroupsWebForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Users\UsersWebForm.aspx.cs">
+      <DependentUpon>UsersWebForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Users\UsersWebForm.aspx.designer.cs">
+      <DependentUpon>UsersWebForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Scripts\ScriptEditWebForm.aspx.cs">
+      <DependentUpon>ScriptEditWebForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Scripts\ScriptEditWebForm.aspx.designer.cs">
+      <DependentUpon>ScriptEditWebForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Users\UserPageWebForm.aspx.cs">
+      <DependentUpon>UserPageWebForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Users\UserPageWebForm.aspx.designer.cs">
+      <DependentUpon>UserPageWebForm.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\licenses.licx" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Resource.de.resx" />
+    <EmbeddedResource Include="Resources\Resource.ru.resx" />
+    <EmbeddedResource Include="Resources\Resource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>52202</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:52233/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

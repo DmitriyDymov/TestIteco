@@ -51,7 +51,7 @@ function signInButtonOnClick(s, e) {
 function logonCallbackOnCallbackComplete(s, e) {
     errorLabel.SetText("");
     if (e.result === "2") {
-        window.location.href = "/SelectCompany";
+        window.location.href = "/ContactsRegistry";
     }
     else {
         errorLabel.SetText(e.result);

@@ -13,12 +13,22 @@ namespace TestIteco.Forms.Users
 
         protected void LogonCallback_OnCallback(object source, CallbackEventArgs e)
         {
-            //var p = e.Parameter.Split('|');
-            //var email = p[0];
-            //var password = p[1];
+            var p = e.Parameter.Split('|');
+            var email = p[0];
+            var password = p[1];
 
-            //var normalEmail = email.Replace(" ", "");
-            //var normalPassword = Crypto.Hash.ComputeHash(password.Replace(" ", ""));
+            var normalEmail = email.Replace(" ", "").ToLower();
+            var normalPassword = password.Replace(" ", "");
+
+            if (normalEmail == "global@it.com" && normalPassword == "exists")
+            {
+                FormsAuthentication.SetAuthCookie(Convert.ToString(Session["UserID"]), false);
+                e.Result = "2";
+            }
+            else
+            {
+                e.Result = "Указаны неверные логин или пароль";
+            }
 
             //var users = Users.UserLogon.GetUsers().Where(r => r.UserEnabled == true);
             //var exists = false;

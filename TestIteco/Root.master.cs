@@ -53,7 +53,7 @@ namespace TestIteco
             CreateAdminNavBarItems();
             CreateHelpNavBarItems();
 
-            CompanyLabel.InnerText = $"{DateTime.Now.Year} S1 Company";
+            CompanyLabel.InnerText = $"{DateTime.Now.Year} Created by D.Dymov - Russian professional developer";
 
             UpdateUserInfo();
         }
@@ -78,6 +78,11 @@ namespace TestIteco
         {
             ApplicationMenu.Items.Clear();
 
+            ApplicationMenu.Items.Add(new MenuItem("Контакты", "ContactsRegistry", "", "/ContactsRegistry"));
+            ApplicationMenu.Items.Add(new MenuItem("Вызовы", "ContactsRegistry", "", "/CallRegistry"));
+            ApplicationMenu.Items.Add(new MenuItem("Конференции", "ConferencesRegistry", "", "/ConferencesRegistry"));
+
+            //    ApplicationMenu.Items.Add(new MenuItem("Выбор компании", "SelectCompany", "", "/SelectCompany"));
             //if (Session["CompanyID"] == null)
             //{
             //    ApplicationMenu.Items.Add(new MenuItem("Мои компании", "MyCompanies", "", "/MyCompanies"));

@@ -4,18 +4,29 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
-using System.Web;
 
 namespace TestIteco.Models.Conferences
 {
     public class Conference
     {
+        public Conference()
+        {
+
+        }
+
+        public Conference(int conferenceID)
+        {
+            ConferenceID = conferenceID;
+            Get();
+        }
+
         public int ConferenceID { get; set; }
         public DateTime ConferencePlannedDate { get; set; }
         public DateTime ConferenceBeganDate { get; set; }
-        public int ConferenceStatusID { get; set; }
-        public string ConferenceSubject { get; set; }
-        public string ConferenceComment { get; set; }
+        public int ConferenceStatusID { get; set; } = 1;
+        public string ConferenceSubject { get; set; } = "";
+        public string ConferenceComment { get; set; } = "";
+        public ConferenceStatus ConferenceStatus => new ConferenceStatus(ConferenceStatusID);
 
         public void Save()
         {
@@ -44,11 +55,6 @@ namespace TestIteco.Models.Conferences
                             var r = table.Rows[0];
 
                             ConferenceID = Convert.ToInt32(r["ConferenceID"]);
-                            ConferencePlannedDate = Convert.ToDateTime(r["ConferencePlannedDate"]);
-                            ConferenceBeganDate = Convert.ToDateTime(r["ConferenceBeganDate"]);
-                            ConferenceStatusID = Convert.ToInt32(r["ConferenceStatusID"]);
-                            ConferenceSubject = Convert.ToString(r["ConferenceSubject"]);
-                            ConferenceComment = Convert.ToString(r["ConferenceComment"]);
                         }
                     }
                 }
@@ -134,7 +140,7 @@ namespace TestIteco.Models.Conferences
                                 ConferenceID = Convert.ToInt32(r["ConferenceID"]),
                                 ConferencePlannedDate = Convert.ToDateTime(r["ConferencePlannedDate"]),
                                 ConferenceBeganDate = Convert.ToDateTime(r["ConferenceBeganDate"]),
-                                ConferenceStatusID = Convert.ToInt32(r["ConferenceStatusID"]),
+                                ConferenceStatusID = Convert.ToInt32(r["ConferenceStatusID"]) + 1,
                                 ConferenceSubject = Convert.ToString(r["ConferenceSubject"]),
                                 ConferenceComment = Convert.ToString(r["ConferenceComment"])
                             });

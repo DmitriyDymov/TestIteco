@@ -1,13 +1,8 @@
-﻿/*
-  Author:      D.Dymov
-  Create date: 22.02.2022
-*/ 
-
-function normalString(source) {
+﻿function normalString(source) {
     if (source === null) {
         return "";
     } else {
-        return source.replace("|", "");
+        return source.replace("|", "").trim();
     }
 }
 
@@ -20,17 +15,37 @@ function dateToStr(date) {
 }
 
 function dateTimeToStr(date) {
-
     var dateStr = padStr(date.getFullYear()) +
         "" +
         padStr(1 + date.getMonth()) +
         "" +
         padStr(date.getDate()) +
-        " " +
+        "" +
         padStr(date.getHours()) +
         "" +
         padStr(date.getMinutes());
     return dateStr;
+}
+
+function strToDateTime(source) {
+    var strYear = subStr(source,0, 4);
+    var strMonth = subStr(source,4, 2);
+    var strDay = subStr(source,6, 2);
+    var strHours = subStr(source,8, 2);
+    var strMinutes = subStr(source,10, 2);
+
+    var dateStr = strYear + "-" + strMonth + "-" + strDay + "T" + strHours + ":" + strMinutes;
+
+    return new Date(dateStr);
+}
+
+function subStr(source, startIndex, count) {
+    var res = "";
+    for (var i = startIndex; i < startIndex + count; i++) {
+        res = res + source[i];
+    }
+
+    return res;
 }
 
 function padStr(i) {

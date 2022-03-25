@@ -4,21 +4,36 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
-using System.Web;
-using DevExpress.Web;
+using TestIteco.Models.Contacts;
 
 namespace TestIteco.Models.Calls
 {
     public class Call
     {
+        public Call()
+        {
+
+        }
+
+        public Call(int callID)
+        {
+            CallID = callID;
+            Get();
+        }
+
         public int CallID { get; set; }
         public int SourceContactID { get; set; }
         public int TargetContactID { get; set; }
+        public Contact SourceContact => new Contact(SourceContactID);
+        public Contact TargetContact => new Contact(TargetContactID);
         public DateTime CallDate { get; set; } = Functions.Constants.DefaultDateTime;
         public int CallDuration { get; set; }
         public string CallSubject { get; set; } = "";
         public string CallComment { get; set; } = "";
-        public int CallStatusID { get; set; }
+        public int CallStatusID { get; set; } = 1;
+        public CallStatus CallStatus => new CallStatus(CallStatusID);
+
+
 
         public void Save()
         {
@@ -143,17 +158,17 @@ namespace TestIteco.Models.Calls
                             adapter.Fill(table);
 
                             calls.AddRange(from DataRow r in table.Rows
-                            select new Call()
-                            {
-                                CallID = Convert.ToInt32(r["CallID"]),
-                                SourceContactID = Convert.ToInt32(r["SourceContactID"]),
-                                TargetContactID = Convert.ToInt32(r["TargetContactID"]),
-                                CallDate = Convert.ToDateTime(r["CallDate"]),
-                                CallDuration = Convert.ToInt32(r["CallDuration"]),
-                                CallSubject = Convert.ToString(r["CallSubject"]),
-                                CallComment = Convert.ToString(r["CallComment"]),
-                                CallStatusID = Convert.ToInt32(r["CallStatusID"])
-                            });
+                                           select new Call()
+                                           {
+                                               CallID = Convert.ToInt32(r["CallID"]),
+                                               SourceContactID = Convert.ToInt32(r["SourceContactID"]),
+                                               TargetContactID = Convert.ToInt32(r["TargetContactID"]),
+                                               CallDate = Convert.ToDateTime(r["CallDate"]),
+                                               CallDuration = Convert.ToInt32(r["CallDuration"]),
+                                               CallSubject = Convert.ToString(r["CallSubject"]),
+                                               CallComment = Convert.ToString(r["CallComment"]),
+                                               CallStatusID = Convert.ToInt32(r["CallStatusID"])
+                                           });
                         }
                     }
                 }

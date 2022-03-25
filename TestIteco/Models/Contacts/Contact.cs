@@ -4,20 +4,34 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using TestIteco.Functions;
 
 namespace TestIteco.Models.Contacts
 {
     public class Contact
     {
+        public Contact()
+        {
+
+        }
+
+        public Contact(int contactID)
+        {
+            ContactID = contactID;
+            Get();
+        }
+
         public int ContactID { get; set; }
         public string ContactName { get; set; } = "";
         public string ContactAddress { get; set; } = "";
         public DateTime ContactDateOfBirth { get; set; } = Functions.Constants.DefaultDateTime;
         public string GroupName { get; set; } = "";
+        public string GroupDisplayName => string.IsNullOrEmpty(GroupName) ? "<Группа не указана>" : GroupName;
         public string CompanyName { get; set; } = "";
         public string ContactPosition { get; set; } = "";
         public string ContactEmail { get; set; } = "";
         public long ContactPhone { get; set; }
+        public string ContactDisplayPhone => PhoneToStr.Convert(ContactPhone);
 
         public void Save()
         {
@@ -145,18 +159,18 @@ namespace TestIteco.Models.Contacts
                             adapter.Fill(table);
 
                             contacts.AddRange(from DataRow r in table.Rows
-                            select new Contact()
-                            {
-                                ContactID = Convert.ToInt32(r["ContactID"]),
-                                ContactName = Convert.ToString(r["ContactName"]),
-                                ContactAddress = Convert.ToString(r["ContactAddress"]),
-                                ContactDateOfBirth = Convert.ToDateTime(r["ContactDateOfBirth"]),
-                                GroupName = Convert.ToString(r["GroupName"]),
-                                CompanyName = Convert.ToString(r["CompanyName"]),
-                                ContactPosition = Convert.ToString(r["ContactPosition"]),
-                                ContactEmail = Convert.ToString(r["ContactEmail"]),
-                                ContactPhone = Convert.ToInt64(r["ContactPhone"])
-                            });
+                                              select new Contact()
+                                              {
+                                                  ContactID = Convert.ToInt32(r["ContactID"]),
+                                                  ContactName = Convert.ToString(r["ContactName"]),
+                                                  ContactAddress = Convert.ToString(r["ContactAddress"]),
+                                                  ContactDateOfBirth = Convert.ToDateTime(r["ContactDateOfBirth"]),
+                                                  GroupName = Convert.ToString(r["GroupName"]),
+                                                  CompanyName = Convert.ToString(r["CompanyName"]),
+                                                  ContactPosition = Convert.ToString(r["ContactPosition"]),
+                                                  ContactEmail = Convert.ToString(r["ContactEmail"]),
+                                                  ContactPhone = Convert.ToInt64(r["ContactPhone"])
+                                              });
                         }
                     }
                 }

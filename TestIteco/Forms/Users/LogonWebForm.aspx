@@ -4,14 +4,14 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <link rel="shortcut icon" href='<%# ResolveUrl("~/Content/Images/ERP_Icon.ico") %>' type="image/x-icon" />
+    <link rel="shortcut icon" href='<%# ResolveUrl("~/Content/Images/S1_logo.ico") %>' type="image/x-icon" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" type="text/css" href="/Content.ashx?Name=Content.css" />
     <link rel="stylesheet" type="text/css" href="/Content.ashx?Name=Layout.css" />
     <script type="text/javascript" src="/Content.ashx?Name=Script.js"></script>
     <link rel="stylesheet" type="text/css" href="/Content.ashx?Name=SignInRegister.css" />
     <script type="text/javascript" src="/Content.ashx?Name=LogonWebForm.js"></script>
-    <title>Performer</title>
+    <title>One System</title>
 </head>
 <body>
     <form id="form1" class="form" runat="server">
@@ -19,18 +19,17 @@
             <div class="formLayout-verticalAlign">
                 <div class="formLayout-container">
 
-                    <table style="width: 200px;">
+                    <table style="width: 230px;">
                         <tr>
                             <td style="width: 40%; text-align: right; padding-left: 20px; padding-top: 20px; padding-bottom: 20px;">
-                                <img width="60" height="60" src="/Content/Images/ERP_icon.svg" alt="" />
+                                <img width="60" height="60" src="/Content/Images/S1_logo.svg" alt="" />
                             </td>
                             <td style="width: 60%; text-align: left; padding-left: 20px; padding-top: 20px; padding-bottom: 20px;">
-                                <span style="font-family: Roboto; font-size: 20px;">Performer
+                                <span style="font-family: Roboto; font-size: 20px;">One System
                                 </span>
                             </td>
                         </tr>
                     </table>
-
                     <dx:ASPxTabControl ID="SignInRegisterTabControl" runat="server" Width="100%" TabAlign="Justify" Paddings-Padding="0" ActiveTabIndex="0">
                         <Tabs>
                             <dx:Tab Text="Войти"></dx:Tab>

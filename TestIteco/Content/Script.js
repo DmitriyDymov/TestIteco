@@ -71,7 +71,6 @@
             document.getElementById("pageContent").style.paddingTop = s.GetHeight() + "px"; 
         };
         AddAdjustmentDelegate(adjustmentMethod);
-        setInterval(messageCountUpdate, 4000);
     }
 
     function onLeftPanelInit(s, e) {

@@ -7,8 +7,8 @@
 <html>
 <head runat="server" enableviewstate="false">
     <meta charset="UTF-8" />
-    <title>Performer</title>
-    <link rel="shortcut icon" href='<%# ResolveUrl("~/Content/Images/ERP_Icon.ico") %>' type="image/x-icon">
+    <title>One System</title>
+    <link rel="shortcut icon" href='<%# ResolveUrl("~/Content/Images/S1_logo.ico") %>' type="image/x-icon">
     <meta name="viewport" content="width=device-width, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0" />
     <link rel="stylesheet" type="text/css" href='<%# ResolveUrl("~/Content.ashx?Name=Content.css") %>' />
     <link rel="stylesheet" type="text/css" href='<%# ResolveUrl("~/Content.ashx?Name=Layout.css") %>' />
@@ -16,7 +16,6 @@
     <script type="text/javascript" src='<%# ResolveUrl("~/Content.ashx?Name=Script.js") %>'></script>
     <script type="text/javascript" src='<%# ResolveUrl("~/Content.ashx?Name=Functions.js") %>'></script>
     <script type="text/javascript" src='<%# ResolveUrl("~/Content.ashx?Name=DialogUserControl.js") %>'></script>
-    <script type="text/javascript" src='<%# ResolveUrl("~/Content.ashx?Name=UserMessagesUserControl.js") %>'></script>
     <asp:ContentPlaceHolder ID="Head" runat="server"></asp:ContentPlaceHolder>
 </head>
 <body>
@@ -47,10 +46,10 @@
                                         <table style="width: 200px; height: 45px;">
                                             <tr>
                                                 <td style="width: 30%; text-align: right; padding-left: 20px; padding-top: 5px;">
-                                                    <img width="40" height="40" src="/Content/Images/ERP_icon.svg" alt="" />
+                                                    <img width="40" height="40" src="/Content/Images/S1_logo.svg" alt="" />
                                                 </td>
                                                 <td style="width: 70%; text-align: left; padding-left: 20px; padding-top: 5px;">
-                                                    <span style="font-family: Roboto; font-size: 20px;">Performer
+                                                    <span style="font-family: Roboto; font-size: 20px;">One System
                                                     </span>
                                                 </td>
                                             </tr>
@@ -76,7 +75,7 @@
                                         <div class="account-background">
                                             <div class="user-info">
                                                 <div class="avatar">
-                                                    <img runat="server" id="AvatarUrl" src="/Files/CurrentUserPhotoPreview.ashx?Size=MIN" alt="" />
+                                                    <img runat="server" id="AvatarUrl" src="/Content/Images/Alexandra.png" alt="" />
                                                 </div>
                                             </div>
                                         </div>
@@ -203,8 +202,8 @@
                 <div class="footer">
                     <span id="CompanyLabel" runat="server" class="footer-left"></span>
                     <span class="footer-right">
-                        <a class="footer-link" href="#">Privacy Policy</a>
-                        <a class="footer-link" href="#">Terms of Service</a>
+                        <a class="footer-link" href="#">Политика конфидициальности</a>
+                        <a class="footer-link" href="#">Условия использования</a>
                     </span>
                 </div>
             </div>

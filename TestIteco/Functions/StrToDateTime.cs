@@ -7,7 +7,7 @@ namespace TestIteco.Functions
     {
         public static DateTime Convert(string source)
         {
-            return DateTime.ParseExact(source, "yyyyMMdd HHmm", CultureInfo.InvariantCulture);
+            return DateTime.ParseExact(source, "yyyyMMddHHmm", CultureInfo.InvariantCulture);
         }
     }
 }

@@ -102,20 +102,19 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\CallEdit.js" />
+    <Content Include="Content\CallRegistry.js" />
+    <Content Include="Content\ConferenceContacts.js" />
+    <Content Include="Content\ConferenceEdit.js" />
+    <Content Include="Content\ConferencesRegistry.js" />
+    <Content Include="Content\ContactEdit.js" />
+    <Content Include="Content\ContactHistory.js" />
+    <Content Include="Content\ContactRegistry.js" />
+    <Content Include="Content\ContactSelect.js" />
     <Content Include="Content\DialogUserControl.js" />
+    <Content Include="Content\Images\Alexandra.png" />
     <Content Include="Content\Images\calendar-plus.svg" />
     <Content Include="Content\Content.css" />
-    <Content Include="Content\FileTypes\Document_48x67.png" />
-    <Content Include="Content\FileTypes\File_48x67.png" />
-    <Content Include="Content\FileTypes\ImageGallery_48x67.png" />
-    <Content Include="Content\FileTypes\Image_48x67.png" />
-    <Content Include="Content\FileTypes\Movie_48x67.png" />
-    <Content Include="Content\FileTypes\Music_48x67.png" />
-    <Content Include="Content\FileTypes\PDF_48x67.png" />
-    <Content Include="Content\FileTypes\Presentation_48x67.png" />
-    <Content Include="Content\FileTypes\SpreadSheet_48x67.png" />
-    <Content Include="Content\FileTypes\TextFile_48x67.png" />
-    <Content Include="Content\FileTypes\Zip_48x67.png" />
     <Content Include="Content\Functions.js" />
     <Content Include="Content\GridView.css" />
     <Content Include="Content\GridView.js" />
@@ -141,8 +140,6 @@
     <Content Include="Content\Images\down.svg" />
     <Content Include="Content\Images\edit.svg" />
     <Content Include="Content\Images\enter.svg" />
-    <Content Include="Content\Images\ERP_Icon.ico" />
-    <Content Include="Content\Images\ERP_Icon.svg" />
     <Content Include="Content\Images\export.svg" />
     <Content Include="Content\Images\eye-button-hide.svg" />
     <Content Include="Content\Images\eye-button.svg" />
@@ -160,8 +157,6 @@
     <Content Include="Content\Images\kind1.svg" />
     <Content Include="Content\Images\kind2-white.svg" />
     <Content Include="Content\Images\kind2.svg" />
-    <Content Include="Content\Images\logo-small.svg" />
-    <Content Include="Content\Images\logo.svg" />
     <Content Include="Content\Images\man.svg" />
     <Content Include="Content\Images\menu.svg" />
     <Content Include="Content\Images\message-info.svg" />
@@ -171,6 +166,7 @@
     <Content Include="Content\Images\message_unread.svg" />
     <Content Include="Content\Images\office.svg" />
     <Content Include="Content\Images\pause.svg" />
+    <Content Include="Content\Images\phone.svg" />
     <Content Include="Content\Images\play-button.svg" />
     <Content Include="Content\Images\print.svg" />
     <Content Include="Content\Images\priority1-white.svg" />
@@ -180,6 +176,8 @@
     <Content Include="Content\Images\priority3-white.svg" />
     <Content Include="Content\Images\priority3.svg" />
     <Content Include="Content\Images\refresh.svg" />
+    <Content Include="Content\Images\S1_logo.ico" />
+    <Content Include="Content\Images\S1_logo.svg" />
     <Content Include="Content\Images\save.svg" />
     <Content Include="Content\Images\Scheduler-white.svg" />
     <Content Include="Content\Images\Scheduler.svg" />
@@ -226,17 +224,27 @@
     <Content Include="Content\Script.js" />
     <Content Include="Content\SignInRegister.css" />
     <Content Include="Default.aspx" />
+    <Content Include="Forms\Calls\CallEditUserControl.ascx" />
+    <Content Include="Forms\Conferences\ConferenceContactsUserControl.ascx" />
+    <Content Include="Forms\Conferences\ConferenceEditUserControl.ascx" />
+    <Content Include="Forms\Contacts\ContactEditUserControl.ascx" />
+    <Content Include="Forms\Contacts\ContactHistoryUserControl.ascx" />
+    <Content Include="Forms\Contacts\ContactSelectUserControl.ascx" />
     <Content Include="Functions\DialogUserControl.ascx" />
     <Content Include="Global.asax" />
     <Content Include="PrivacyPolicy.aspx" />
     <Content Include="Forms\Users\LogonWebForm.aspx" />
+    <Content Include="Forms\Contacts\ContactsRegistryWebForm.aspx" />
+    <Content Include="Forms\Calls\CallRegistryWebForm.aspx" />
+    <Content Include="Forms\Conferences\ConferencesRegistryWebForm.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Root.master" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content.ashx" />
-    <None Include="Web.config" />
+    <Content Include="Script_to_create_database.sql" />
+    <Content Include="Web.config" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -257,8 +265,51 @@
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Files\MimeType.cs" />
+    <Compile Include="Forms\Calls\CallEditUserControl.ascx.cs">
+      <DependentUpon>CallEditUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Calls\CallEditUserControl.ascx.designer.cs">
+      <DependentUpon>CallEditUserControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Conferences\ConferenceContactsUserControl.ascx.cs">
+      <DependentUpon>ConferenceContactsUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Conferences\ConferenceContactsUserControl.ascx.designer.cs">
+      <DependentUpon>ConferenceContactsUserControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Conferences\ConferenceEditUserControl.ascx.cs">
+      <DependentUpon>ConferenceEditUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Conferences\ConferenceEditUserControl.ascx.designer.cs">
+      <DependentUpon>ConferenceEditUserControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Contacts\ContactEditUserControl.ascx.cs">
+      <DependentUpon>ContactEditUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Contacts\ContactEditUserControl.ascx.designer.cs">
+      <DependentUpon>ContactEditUserControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Contacts\ContactHistoryUserControl.ascx.cs">
+      <DependentUpon>ContactHistoryUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Contacts\ContactHistoryUserControl.ascx.designer.cs">
+      <DependentUpon>ContactHistoryUserControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Contacts\ContactSelectUserControl.ascx.cs">
+      <DependentUpon>ContactSelectUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Contacts\ContactSelectUserControl.ascx.designer.cs">
+      <DependentUpon>ContactSelectUserControl.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Functions\AppVersion.cs" />
     <Compile Include="Functions\Constants.cs" />
+    <Compile Include="Functions\DateTimeToStr.cs" />
     <Compile Include="Functions\DialogUserControl.ascx.cs">
       <DependentUpon>DialogUserControl.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -266,14 +317,20 @@
     <Compile Include="Functions\DialogUserControl.ascx.designer.cs">
       <DependentUpon>DialogUserControl.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Functions\PhoneToStr.cs" />
     <Compile Include="Functions\StrToDate.cs" />
     <Compile Include="Functions\StrToDateTime.cs" />
+    <Compile Include="Functions\Validations.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Calls\Call.cs" />
+    <Compile Include="Models\Calls\CallStatus.cs" />
     <Compile Include="Models\Conferences\Conference.cs" />
+    <Compile Include="Models\Conferences\ConferenceContact.cs" />
+    <Compile Include="Models\Conferences\ConferenceStatus.cs" />
     <Compile Include="Models\Contacts\Contact.cs" />
+    <Compile Include="Models\Contacts\ContactHistory.cs" />
     <Compile Include="Models\Users\AuthHelper.cs" />
     <Compile Include="PrivacyPolicy.aspx.cs">
       <DependentUpon>PrivacyPolicy.aspx</DependentUpon>
@@ -301,13 +358,33 @@
       <DependentUpon>Root.master</DependentUpon>
     </Compile>
     <Compile Include="Routes\Route.cs" />
-    <Compile Include="Token.cs" />
     <Compile Include="Forms\Users\LogonWebForm.aspx.cs">
       <DependentUpon>LogonWebForm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Forms\Users\LogonWebForm.aspx.designer.cs">
       <DependentUpon>LogonWebForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Contacts\ContactsRegistryWebForm.aspx.cs">
+      <DependentUpon>ContactsRegistryWebForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Contacts\ContactsRegistryWebForm.aspx.designer.cs">
+      <DependentUpon>ContactsRegistryWebForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Calls\CallRegistryWebForm.aspx.cs">
+      <DependentUpon>CallRegistryWebForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Calls\CallRegistryWebForm.aspx.designer.cs">
+      <DependentUpon>CallRegistryWebForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Conferences\ConferencesRegistryWebForm.aspx.cs">
+      <DependentUpon>ConferencesRegistryWebForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Conferences\ConferencesRegistryWebForm.aspx.designer.cs">
+      <DependentUpon>ConferencesRegistryWebForm.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

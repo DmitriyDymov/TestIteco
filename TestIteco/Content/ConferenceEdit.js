@@ -23,6 +23,7 @@ function resetConference() {
 }
 
 function conferenceSaveButtonOnClick(s, e) {
+    closeConferenceEditAfterSave = true;
     saveConference(() => {});
 }
 
@@ -31,8 +32,6 @@ var saveConferenceAfterSavedFunction;
 function saveConference(afterSavedFunction) {
 
     saveConferenceAfterSavedFunction = afterSavedFunction;
-
-    closeConferenceEditAfterSave = true;
 
     var p = editConferenceID +
         "|" +

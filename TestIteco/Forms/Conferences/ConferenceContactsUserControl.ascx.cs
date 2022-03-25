@@ -27,7 +27,7 @@ namespace TestIteco.Forms.Conferences
 
         protected void ConferenceContactsGridView_OnDataBinding(object sender, EventArgs e)
         {
-            ConferenceContactsGridView.DataSource = ConferenceContact.GetConferenceContacts(ConferenceID,0);
+            ConferenceContactsGridView.DataSource = ConferenceContact.GetConferenceContacts(ConferenceID == 0 ? -1 : ConferenceID, 0);
         }
 
         protected void ConferenceContactsGridView_OnCustomCallback(object sender, ASPxGridViewCustomCallbackEventArgs e)

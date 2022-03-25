@@ -244,7 +244,7 @@
   <ItemGroup>
     <Content Include="Content.ashx" />
     <Content Include="Script_to_create_database.sql" />
-    <Content Include="Web.config" />
+    <None Include="Web.config" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
